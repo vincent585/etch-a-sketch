@@ -1,0 +1,20 @@
+body {
+
+}
+
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(20px, 1fr));
+    grid-template-rows:repeat(16, minmax(20px, 1fr));
+    border: 1px solid black;
+    overflow: hidden;
+    height: 700px;
+    width: 700px;
+    margin: auto;
+}
+
+.grid-cell {
+    border: 1px solid black;
+    overflow: hidden;
+}
