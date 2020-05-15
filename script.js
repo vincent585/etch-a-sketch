@@ -1,20 +1,38 @@
 const container = document.querySelector('#container');
+const root = document.documentElement;
+const resetBtn = document.querySelector('#reset-button');
 
 
 
 
 
 function createGrid(size = 16) {
-    for (let i = 0; i < size; i++) {
-        const gridRow = document.createElement('div');
-        gridRow.classList.add('grid-cell');
-        container.appendChild(gridRow);
-        for (let j = 1; j < size; j++) {
-            const gridCell = document.createElement('div');
-            gridCell.classList.add('grid-cell');
-            container.appendChild(gridCell);
-        }
+    root.style.setProperty('--columns', size);
+    root.style.setProperty('--rows', size);
+
+    for (let i = 0; i < size * size; i++) {
+        const gridCell = document.createElement('div');
+        gridCell.classList.add('grid-cell');
+        container.appendChild(gridCell);
+
+        gridCell.addEventListener('mouseenter', colorCell);
     } 
 }
 
-createGrid(16);
+function colorCell(event) {
+    let target = event.target;
+    if (!target.classList.contains('grid-cell')) {
+        return;
+    } else {
+        target.classList.add('colored-cell');
+    }
+}
+
+createGrid();
+
+
+
+
+
+
+
