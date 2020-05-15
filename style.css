@@ -9,8 +9,8 @@
     grid-template-rows:repeat(var(--rows), 1fr);
     border: 1px solid black;
     overflow: hidden;
-    height: 700px;
-    width: 700px;
+    height: 70vh;
+    width: 35vw;
     margin: auto;
 }
 
