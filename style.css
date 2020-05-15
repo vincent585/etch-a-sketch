@@ -3,22 +3,59 @@
     --rows: 1;
 }
 
+body {
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
 #container {
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows:repeat(var(--rows), 1fr);
     border: 1px solid black;
     overflow: hidden;
-    height: 70vh;
-    width: 35vw;
+    height: 600px;
+    width: 600px;
     margin: auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+#reset-button {
+    margin: 30px;
+    padding: 15px;
+    font-family: 'Rock Salt', cursive;
+    background-color: lightgray;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px black;
 }
 
 .grid-cell {
     border: 1px solid black;
     overflow: hidden;
+    background: lightgrey;
 }
 
 .colored-cell {
-    background-color: darkblue;
+    background-color: black;
+}
+
+@media only screen and (max-width: 700px) {
+    #container {
+        width: 450px;
+        height: 450px;
+    }
+
+    #reset-button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    header {
+        font-size: 0.8rem;
+    }
 }
