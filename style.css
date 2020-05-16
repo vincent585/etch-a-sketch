@@ -44,10 +44,30 @@ header {
     box-shadow: 5px 5px 10px black;
 }
 
+#rainbow-button {
+    margin: 30px;
+    padding: 15px;
+    font-family: 'Rock Salt', cursive;
+    background-color: lightgray;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#black-button {
+    margin: 30px;
+    padding: 15px;
+    font-family: 'Rock Salt', cursive;
+    background-color: lightgray;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px black;
+}
+
 .grid-cell {
     border: none;
     overflow: hidden;
-    background: lightgrey;
+    background: lightgray;
 }
 
 .colored-cell {

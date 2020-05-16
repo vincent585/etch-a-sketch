@@ -1,6 +1,8 @@
 const container = document.querySelector('#container');
 const root = document.documentElement;
 const resetBtn = document.querySelector('#reset-button');
+const rainbowBtn = document.querySelector('#rainbow-button');
+const blackBtn = document.querySelector('#black-button');
 
 
 
@@ -26,6 +28,32 @@ function colorCell(event) {
     }
 }
 
+function colorCellRainbow() {
+    const cells = document.querySelectorAll('.grid-cell');
+    cells.forEach(cell => {
+        cell.addEventListener('mouseover', (e) => {
+            cell.style.backgroundColor = getRandomColor();
+        });
+    });
+}
+
+function colorCellBlack() {
+    const cells = document.querySelectorAll('.grid-cell');
+    cells.forEach(cell => cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = 'black';
+    }))
+}
+
+function getRandomColor() {
+    let values = '0123456789abcdef';
+    let color = '#';
+
+    for (let i = 0; i < 6; i++) {
+        color += values[Math.floor(Math.random() * values.length)];
+    }
+    return color;
+}
+
 function resetGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -38,11 +66,13 @@ function resetGrid() {
     }
 }
 
+createGrid();
 
 
 resetBtn.addEventListener('click', resetGrid);
+rainbowBtn.addEventListener('click', colorCellRainbow);
+blackBtn.addEventListener('click', colorCellBlack);
 
-createGrid();
 
 
 
