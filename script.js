@@ -32,7 +32,8 @@ function colorCellRainbow() {
     const cells = document.querySelectorAll('.grid-cell');
     cells.forEach(cell => {
         cell.addEventListener('mouseover', (e) => {
-            cell.style.backgroundColor = getRandomColor();
+            cell.classList.add('rainbow-cell');
+            cell.style.setProperty('--rainbow', getRandomColor());
         });
     });
 }
@@ -40,7 +41,7 @@ function colorCellRainbow() {
 function colorCellBlack() {
     const cells = document.querySelectorAll('.grid-cell');
     cells.forEach(cell => cell.addEventListener('mouseover', () => {
-        cell.style.backgroundColor = 'black';
+        cell.classList.add('colored-cell');
     }))
 }
 

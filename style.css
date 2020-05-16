@@ -1,6 +1,7 @@
 :root {
     --columns: 1;
     --rows: 1;
+    --rainbow: ;
 }
 
 body {
@@ -72,6 +73,10 @@ header {
 
 .colored-cell {
     background-color: black;
+}
+
+.rainbow-cell {
+    background-color: var(--rainbow);
 }
 
 @media only screen and (max-width: 700px) {
